@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+html, body{
+    height: 100vh;
+    /* min-height: 100vh; */
+    /* width: 100vw; */
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: "Roboto",sans-serif; */
+    transition-duration: 3s;
+    scroll-behavior: smooth;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+    
+}
+
+
+.searchButton{
+    width: 50%;
+    
+}
+
+.searchBar,.mainpanel,.photoGrid{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.navbar{
+    border-bottom: 1px solid #ced4da;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.navbar_nav{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-right: 140px;
+
+}
+
+ul {
+    list-style-type: none;
+  }
+
+
+
+.card-body{
+    padding: 0%;
+}
+
+
+
+.prop_Photo{
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.propertyPhoto{
+    display: flex;
+}
+
+
+.prop_price{
+    color: #0D63C9;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 18px;
+}
+
+.propertyDetails{
+    padding: 8px;
+}
+
+.cardDeitails{
+    height: 800px;
+}
+
+
+#fullprop_Photo{
+    width: 719px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.descriptionDetails,.fullpropertyDetails{
+    margin-top: 10px;
+}
+
+.contentPanel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.description,.Icons{
+    padding: 10px;
+}
+.Icons{
+    display: flex;
+    justify-content:space-between;
+}
+.IconPart1,.IconPart2{
+    display: flex;
+    flex-direction: column;
+
+    
+}
+.IconPart2{
+    padding-right: 250px;
+    
+}
+
+.photoGridAndAgent{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 23px;
+}
+
+.tenantDetails{
+    margin-left: 20px;
+}
+.AgencyLogo{
+    margin-top: 7px;
+    
+}
+.AgencyLogoPhoto{
+    padding: 5px;
+}
+.AgencyLogo> .card{
+    height: 105px;
+}
+
+
+.fullpropertyDetails{
+    display: flex;
+    justify-content: center;
+}
+
+.AgentPhoto{
+    height: 155px;
+    width: 130px;
+}
+/* .AgentProfile > .card{
+    display: flex;
+} */
+
+.AgentProfile > .card{
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.AgentProfile {
+    margin-left: 18px;
+}
+
+.LogInSection{
+    display: flex;
+    justify-content: end;
+}

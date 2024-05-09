@@ -1,0 +1,28 @@
+{
+  "name": "bitpropapp",
+  "version": "1.0.0",
+  "description": "A system that allows prospective tenants to view available properties and register their interest for specific properties. The system should, via email, notify the agent responsible for the relevant property when a tenant has indicated interest.",
+  "main": "Server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Kwena Komape",
+  "license": "ISC",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "ejs-mate": "^4.0.0",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "nodemailer": "^6.9.13",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^8.0.0",
+    "router": "^1.3.8",
+    "sqlite3": "^5.1.7"
+  }
+}

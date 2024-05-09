@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PropertyDetails</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "NVB6PJzMnA-fyDSFy",
+        });
+    })();
+    </script>
+    <script src="./script.js"></script>
+    <style>
+        .mySlides {display:none;}
+    </style>
+   
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">
+            <img src="https://assets-global.website-files.com/6246e239c0cb131560ef79d5/6246e76bba42b4569999b33a_Bitprop-logo.svg" alt="">
+          </a>
+
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Rent</a>
+                </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Buy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Developments</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Log In</a>
+              </li>
+            </ul>
+           
+          </div>
+        </div>
+      </nav>
+
+      <main>
+        <div class="selectMenu">
+            <ul class="navbar_nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Rent</a>
+                </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Buy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Developments</a>
+              </li>
+              
+            </ul>
+        </div>
+
+        <div class="mainPage" >
+            <div class="photoGrid">
+                <div class="photoGridAndAgent">
+                    <div class="card" style="width: 48rem;">
+                        
+                            <img class="mySlides" id="fullprop_Photo" src="/photos/Properties/P2_Outside.JPG" alt="">
+                            <img class="mySlides"  id="fullprop_Photo" src="/photos/Properties/P1_image1.JPG" alt="">
+                            <img class="mySlides"  id="fullprop_Photo" src="/photos/Properties/P1_image2.JPG" alt="">
+                            <img class="mySlides"  id="fullprop_Photo" src="/photos/Properties/P1_image3.JPG" alt="">
+                        
+                    <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                    <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+                    </div>
+                    <div class="tenantDetails">
+                        <form action="/Register" method="POST">
+                            <h5>Contact Agent</h5>
+                            <div class="mb-3">
+                                
+                                <input type="text" class="form-control" id="name" name="Name" placeholder="Your Name">
+  
+                              </div>
+                            <div class="mb-3">
+                              <input type="email" class="form-control" id="exampleInputEmail1" name="Email" aria-describedby="emailHelp" placeholder="Your Email">
+
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="contactNumber"  name="contactNumber" placeholder="Your Contact Number">
+  
+                              </div>
+                              <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">Your Message</label>
+                                <textarea class="form-control" name="textMessage" id="exampleFormControlTextarea1" rows="3">I'm interested in this property, please contact me. </textarea>
+                              </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                            
+                          </form >
+                         
+                          <div class="AgencyLogo">
+                            <div class="card" style="width: 15rem;">
+                                <span class="AgencyLogoPhoto">
+                                    <img src="https://assets-global.website-files.com/6246e239c0cb131560ef79d5/6246e76bba42b4569999b33a_Bitprop-logo.svg" alt="">
+                                </span>
+                                
+                            </div>
+                          </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- <div>
+                    hell
+                </div> -->
+            </div>
+            
+            <div class="fullpropertyDetails">
+                <div class="contentPanel" >
+                    <div class="card" style="width: 48rem;">
+                        <div class="propertyDetails">
+                            <span class="prop_price" >R 3200</span>
+                            <br>
+                            <span>6 Bitprop flats</span>
+                            <br>
+                            <span>8 Bedrooms</span>
+                            <br>
+                            <span>Adress: iLitha Park, Khayelitsha</span>
+                            <br>
+                            <br>
+                            <span class="propertyIcons">
+                                <span><img src="https://www.property24.com/Content/images/Optimized/Icons/icon_bed_new.svg?z=0bd7e1e97b09e85351e8" alt="">
+                                    8
+                                </span>
+                                <span><img src="https://www.property24.com/Content/images/Optimized/Icons/icon_bath_new.svg?z=be0fb4c6f398267b865a" alt="">
+                                    1
+                                </span>
+                                <span><img src="https://www.property24.com/Content/images/Optimized/Icons/icon_parking.svg?z=c9a3223daa656b51b425" alt="">
+                                    1
+                                </span>
+                                <span><img src="https://www.property24.com/Content/images/Optimized/Icons/icon_floor_new.svg?z=6469c3498bc6c7f3625f" alt="">
+                                    45m
+                                </span>
+                                
+                                
+                            </span>
+                        </div>
+                       
+                      
+                    </div>
+
+                    <div class="descriptionDetails" >
+                        <div class="card" style="width: 48rem;">
+                            <span class="description">
+                                A sensational single-level home with a sunny north-facing garden and large under-cover patio perfect for seamless indoor-outdoor living. 
+                                The double garage leads directly into the entrance area and the gourmet open plan kitchen serves the well-proportioned dining and living areas. 
+                                The three oversized bedrooms are modern, light, and bright with crisp white fitted mediterranean shutters. A magnificent communal pool with direct 
+                                private access from the garden
+                            </span>
+                            
+                        </div>
+                    </div>
+                    <div class="descriptionDetails" >
+                        <div class="card" style="width: 48rem;">
+                            <span class="Icons">
+
+                                <div class="IconPart1">
+                                    <span><img src="https://www.property24.com/Content/images/Optimized/Icons/icon_bed_new.svg?z=0bd7e1e97b09e85351e8" alt="">
+                                    Bedrooms: 8
+                                    </span>
+                                    <span><img src="https://www.property24.com/Content/images/Optimized/Icons/icon_bath_new.svg?z=be0fb4c6f398267b865a" alt="">
+                                        bathrooms: 1
+                                    </span>
+                                    <span><img src="https://www.property24.com/Content/images/Optimized/Icons/icon_secure_parking_blue.svg?z=0ba2cb82627bd58e0f99" alt="">
+                                        Parking: 1
+                                    </span>
+                                </div>
+                                <div class="IconPart2">
+                                    <span><img src="https://www.property24.com/Content/images/Optimized/Icons/icon_pet_blue.svg?z=17b437c75ac713df28cb" alt="">
+                                        No Pets Allowed
+                                    </span>
+                                    <span><img src="https://www.property24.com/Content/images/Optimized/Icons/icon_unfurnished_blue.svg?z=1743f61133f8c9488290" alt="">
+                                        Unfurnished
+                                    </span>
+                                    <span><img src="https://www.property24.com/Content/images/Optimized/Icons/icon_pool_blue.svg?z=f0bfbb4cdaa6a84f9af6" alt="">
+                                        Pool
+                                    </span>
+                                </div>
+                            </span>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="AgentProfile">
+                    <div class="card" style="width: 15rem;">
+                        <h5>Agent</h5>
+                        <div>
+                            <img class="AgentPhoto" src="/photos/IDphoto.jpg" alt="">
+                        </div>
+                         <div>James Gain</div>
+                         <br>
+                         <span>Contact: 06064412</span>
+                        
+                    </div>
+                </div>
+               
+               
+
+            </div>
+        </div>
+
+      </main>
+      <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+        
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+        
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          if (n > x.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = x.length}
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          x[slideIndex-1].style.display = "block";  
+        }
+    </script>
+</body>
+</html>
