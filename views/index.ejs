@@ -27,80 +27,58 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">Dvelopments</a>
               </li>
-              <div class="LogInSection">
-                <li class="nav-item">
-                  <a class="nav-link" href="/LogIn">Log In</a>
-                </li>
-              </div>
+              
               
               
             </ul>
            
           </div>
+          <div class="LogInSection">
+            
+              <a class="nav-link" href="/LogIn">Log In</a>
+            
+          </div>
         </div>
       </nav>
       <main>
-        <div class="selectMenu">
-            <ul class="navbar_nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Rent</a>
-                </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Buy</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Developments</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Agencies</a>
-              </li>
-            </ul>
-        </div>
-        
-       
-        <div class="searchBar">
-            <div class="searchButton">
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-            
-        </div>
-
+  
+      <h1 class="titleH">Check the avaible properties via bitprop</h1>
         <div class="mainpanel">
-            <div  onclick="location.href='/propertyDetails/1';" class="card" style="width: 48rem;">
+          <% for(i=0;i<10;i++) {%>
+            <% let list =  (rows[i].Features).split(",") %>
+            <% let Bedrooms = list[0].substring(list[0].length-3);%>
+            <%let Shower = list[1].substring(list[1].length-3);%>
+            <%let ParkingLot = list[2].substring(list[2].length-3);%>
+    
+            <div  onclick="location.href='/propertyDetails/<%=rows[i].Number%>';" class="card" style="width: 48rem;">
                 <div class="propertyPhoto">
-                    <img class="prop_Photo" src="/photos/Properties/P2_Outside.JPG" alt="">
+                    <img class="prop_Photo" src="/photos/Properties/<%=rows[i].Photos%>" alt="">
                     <div class="propertyDetails">
-                        <span class="prop_price" >R 3200</span>
+                        <span class="prop_price" ><%=rows[i].Price  %></span>
                         <br>
-                        <span>8 Bedrooms</span>
+                        <span><%=Bedrooms.substring(1,Bedrooms.length-1) %> Bedrooms</span>
                         <br>
-                        <span>iLitha Park, Khayelitsha</span>
+                        <span><%=rows[i].Address %></span>
                         <br>
+                        <span>Property Type: Bitprop flats</span>
                         <br>
                         <br>
                         <span class="propertyIcons">
                             <span><img src="https://www.property24.com/Content/images/Optimized/Icons/icon_bed_new.svg?z=0bd7e1e97b09e85351e8" alt="">
-                                8
+                              <%= Bedrooms.substring(1,Bedrooms.length-1) %>
                             </span>
                             <span><img src="https://www.property24.com/Content/images/Optimized/Icons/icon_bath_new.svg?z=be0fb4c6f398267b865a" alt="">
-                                1
+                                <%= Shower.substring(1,Shower.length-1) %>
                             </span>
                             <span><img src="https://www.property24.com/Content/images/Optimized/Icons/icon_parking.svg?z=c9a3223daa656b51b425" alt="">
-                                1
-                            </span>
-                            
-                            
+                                <%= ParkingLot.substring(1,ParkingLot.length-1) %>
+                            </span> 
                         </span>
-
-                        
                     </div>
                 </div>
                 
             </div>
-
+          <% } %>
         </div>
        
 

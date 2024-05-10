@@ -13,47 +13,14 @@
    
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/">
-            <img src="https://assets-global.website-files.com/6246e239c0cb131560ef79d5/6246e76bba42b4569999b33a_Bitprop-logo.svg" alt="">
-          </a>
-
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Rent</a>
-                </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Buy</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Developments</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Log In</a>
-              </li>
-            </ul>
-           
-          </div>
-        </div>
-      </nav>
-
       <main>
-  
-
+        
         <div class="mainPage" >
-            <h1>Full specification of the property</h1>
-            <br>
-            <br>
-            <a href="/" class="btn btn-primary btn-lg " tabindex="-1" role="button" aria-disabled="true">Go Back</a>
-            
-                <div class="photoGridAndAgent">
-                    
-                    <div>
+            <h1>Tenant's Interested</h1>
+            <div class="photoGrid">
+                <div class="photoGridAndAgent2">
                     <div class="card" style="width: 48rem;">
-                        <div>
+                        
                             <img class="mySlides" id="fullprop_Photo" src="/photos/Properties/<%=rows[0].Photos%>" alt="">
                             <img class="mySlides"  id="fullprop_Photo" src="/photos/Properties/P<%=rows[0].Number%>_image1.JPG" alt="">
                             <img class="mySlides"  id="fullprop_Photo" src="/photos/Properties/P<%=rows[0].Number%>_image2.JPG" alt="">
@@ -61,51 +28,13 @@
                         
                     <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
                     <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
-                        </div>
-                        
-                    </div>
-                    </div>
-                    <div class="tenantDetails">
-                        <form action="/Register" method="POST">
-                            <h5>Contact Agent</h5>
-                            <div class="mb-3">
-                                
-                                <input type="text" class="form-control" id="name" name="Name" placeholder="Your Name">
-  
-                              </div>
-                            <div class="mb-3">
-                              <input type="email" class="form-control" id="exampleInputEmail1" name="Email" aria-describedby="emailHelp" placeholder="Your Email">
-
-                            </div>
-                            <div class="mb-3">
-                                <input type="text" class="form-control" id="contactNumber"  name="contactNumber" placeholder="Your Contact Number">
-  
-                              </div>
-                              <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">Your Message</label>
-                                <textarea class="form-control" name="textMessage" id="exampleFormControlTextarea1" rows="3">I'm interested in this property, please contact me. </textarea>
-                              </div>
-                              <input type="hidden" id="propertyNumber" name="propertyNumber" value=<%=rows[0].Number%> />
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                            
-                          </form >
-                         
-                          <div class="AgencyLogo">
-                            <div class="card" style="width: 15rem;">
-                                <span class="AgencyLogoPhoto">
-                                    <img src="https://assets-global.website-files.com/6246e239c0cb131560ef79d5/6246e76bba42b4569999b33a_Bitprop-logo.svg" alt="">
-                                </span>
-                                
-                            </div>
-                          </div>
-                        
                     </div>
                 </div>
                 
                 <!-- <div>
                     hell
                 </div> -->
-            
+            </div>
             
             <div class="fullpropertyDetails">
                 <div class="contentPanel" >

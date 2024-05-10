@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const sqlite3 = require ('sqlite3').verbose();
-const {sendMail} = require('../views/script') 
+
 
 
 db = new sqlite3.Database('./myDatabase.db',sqlite3.OPEN_READWRITE,(err)=>{
@@ -15,20 +15,92 @@ db = new sqlite3.Database('./myDatabase.db',sqlite3.OPEN_READWRITE,(err)=>{
 // ,const {createAgent,createTenant,readAgents,updateAgent,deleteAgent} = require('../crud')
 // const {createTenant,readAgents} = require('../crud')
 
-router.get('/', (req, res) => {
+router.get('/',async (req, res,callback) => {
+    
+    const sql = `SELECT * FROM PropertyDetails`;
+    //db.all(sql,[],callback)
+    await db.all(`SELECT * FROM PropertyDetails`, function(err, rows) {
+        if(err){
+            console.log(err.message)
+        }
+        else{
+            res.render('index',{rows});
+        }
+     });
 
-    res.render('index');
+    
+    
 })
 
-router.get('/propertyDetails/:id', (req, res) => {
+router.get('/propertyDetails/:id',async (req, res) => {
 
-    res.render('propertyDetails');
+    var number = String(req.params.id)
+    
+    console.log(req.params)
+    // const sql = `SELECT * FROM PropertyDetails`;
+    // //db.all(sql,[],callback)
+    await db.all(`SELECT * FROM PropertyDetails WHERE Number = ${number}`, function(err, rows) {
+        if(err){
+            console.log(err.message)
+        }
+        else{
+        
+            res.render('propertyDetails',{rows});
+        }
+     });
+
+    //  const sql = `DELETE FROM Agents WHERE id = ?`
+    //  db.run(sql, id,callback)
+
 })
 
 router.get('/LogIn', (req, res) => {
 
     res.render('LogIn');
 })
+
+router.get('/tenantsDetails', async(req, res) => {
+
+    await db.all(`SELECT * FROM Tenants`, function(err, rows) {
+        if(err){
+            console.log(err.message)
+        }
+        else{
+            console.log(rows)
+            res.render('tenantsDetails',{rows});
+        }
+     });
+
+})
+
+router.post('/tenantsDetails', (req, res) => {
+
+    const {email,password} = req.body
+
+    res.redirect('tenantsDetails');
+    
+})
+
+router.get('/tenantInterest/:id',async (req, res) => {
+    var number = String(req.params.id)
+    
+    //console.log(req.params)
+    // const sql = `SELECT * FROM PropertyDetails`;
+    // //db.all(sql,[],callback)
+    await db.all(`SELECT * FROM PropertyDetails WHERE Number = ${number}`, function(err, rows) {
+        if(err){
+            console.log(err.message)
+        }
+        else{
+        
+            res.render('tenantInterest',{rows});
+        }
+     });
+
+})
+
+
+
 
 router.get('/ShowAgencies', (req, res) => {
 
@@ -47,36 +119,40 @@ router.get('/ShowAgencies', (req, res) => {
 
 router.post('/Register', (req, res,callback) => {
 
-    const {Name,Email,contactNumber,textMessage} = req.body
-    const sql = `INSERT INTO Tenants (Name,Email,contactNumber,textMessage) VALUES (?,?,?,?)`
-    db.run(sql,[Name,Email,contactNumber,textMessage],function(err){
+    const {Name,Email,contactNumber,textMessage,propertyNumber} = req.body
+    console.log(req.body)
+    const sql = `INSERT INTO Tenants (Name,Email,contactNumber,textMessage,propertyNumber) VALUES (?,?,?,?,?)`
+    db.run(sql,[Name,Email,contactNumber,textMessage,propertyNumber],function(err){
         callback(err,{id: this.lastID})
     })
     
  
 
-    sendMail(Name,Email,textMessage)
-    // const transporter = nodemailer.createTransport({
-    //     host: 'smtp.gmail.com',
-    //     port: 465,
-    //     secure: true,
-    //     auth:{
-    //         user: 'kwenakomape2@gmail.com',
-    //         pass: 'gbzz yuit rfxs vgso'
-    //     },
-    // });
+    
+    const transporter = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
+        auth:{
+            user: 'kwenakomafpe2@gmail.com',
+            pass: 'gbzz yuit rfxs vgsohghhg'
+        },
+    });
 
-    // transporter.sendMail({
-    //     to: 'Fezco0963@gmail.com',
-    //     subject: 'Interested in this property',
-    //     html: '<h1>Hey Can we talk more about this property</h1>'
+    transporter.sendMail({
+        to: 'Fezco0963@gmail.com',
+        subject: 'Interested on this property',
+        html: `<h3>${textMessage}</h3>
+                <br/>
+                click the link below to login in and see tenants full deatils
+                <a class="nav-link" href="http://localhost:3000/LogIn">Bitprop</a>  `
 
-    // }).then(()=>{
-    //     console.log("Email Sent")
-    // }).catch(err=>{
-    //     console.error(err)
-    // })
-    res.redirect("/propertyDetails/1")
+    }).then(()=>{
+        console.log("Email Sent")
+    }).catch(err=>{
+        console.error(err)
+    })
+    res.redirect(`/propertyDetails/${propertyNumber}`)
 
 })
 

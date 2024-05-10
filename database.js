@@ -9,7 +9,7 @@ db = new sqlite3.Database(dbName,(err) =>{
     }
     else{
         //console.log("Connected to the Database")
-        db.run('CREATE TABLE IF NOT EXISTS Tenants (id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT, Email TEXT, contactNumber TEXT, textMessage TEXT)',(err) => {
+        db.run('CREATE TABLE IF NOT EXISTS Tenants (id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT, Email TEXT, contactNumber TEXT, textMessage TEXT,propertyNumber TEXT)',(err) => {
             if(err){
                 console.error(err.message);
             }
@@ -25,7 +25,7 @@ db = new sqlite3.Database(dbName,(err) =>{
                 console.log("Agent.. Table created or existed")
             }
         })
-        db.run('CREATE TABLE IF NOT EXISTS PropertyDetails (id INTEGER PRIMARY KEY AUTOINCREMENT, Price TEXT,Address TEXT,Features TEXT,Description TEXT ,PropertyType TEXT,Photos TEXT)',(err) => {
+        db.run('CREATE TABLE IF NOT EXISTS PropertyDetails (id INTEGER PRIMARY KEY AUTOINCREMENT,Number TEXT, Price TEXT,Address TEXT,Features TEXT,Description TEXT ,PropertyType TEXT,Photos TEXT)',(err) => {
             if(err){
                 console.error(err.message);
             }

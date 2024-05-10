@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenants Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="tenantDetails">
+      <h1>List of Tenants who are interested in Bitprop Properties</h1>
+      <br>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Property Number</th>
+            <th scope="col">Name</th>
+            <th scope="col">mail</th>
+            <th scope="col">Contact Number</th>
+            <th scope="col">textMessage</th>
+            <th scope="col">Assigned Agent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(i=0;i<rows.length;i++) {%>
+            <tr>
+                <th scope="row"><%=rows[i].propertyNumber%>  <a href="/tenantInterest/<%=rows[i].propertyNumber%>">View full details</a></th>
+                <td><%=rows[i].Name%></td>
+                <td><%=rows[i].Email%></td>
+                <td><%=rows[i].contactNumber%></td>
+                <td><%=rows[i].textMessage%></td>
+                <% if(rows[i].propertyNumber==="1" || rows[i].propertyNumber==="7" || rows[i].propertyNumber==="9" || rows[i].propertyNumber==="2" || rows[i].propertyNumber==="4") { %>
+                    <td>James Gain</td>
+                <% } else{%>
+                    
+                    <td>Keith Samuel</td> 
+                <% } %>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+
+    </div>
+</body>
+</html>

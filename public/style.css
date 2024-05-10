@@ -12,20 +12,24 @@ html, body{
     font-family: Arial, Helvetica, sans-serif;
     /* font-family: "Roboto",sans-serif; */
     transition-duration: 3s;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; 
     /* display: flex;
     flex-direction: column;
     justify-content: space-between; */
     
 }
-
+.titleH{
+    text-align: center;
+    margin: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
 
 .searchButton{
     width: 50%;
     
 }
 
-.searchBar,.mainpanel,.photoGrid{
+.searchBar{
     display: flex;
     justify-content: center;
     margin-top: 20px;
@@ -43,16 +47,18 @@ html, body{
 
 }
 
-ul {
+ul ,.nav-link{
     list-style-type: none;
   }
 
 
 
-.card-body{
-    padding: 0%;
-}
 
+
+.btn{
+    color: #ced4da;
+    margin: 0;
+}
 
 
 .prop_Photo{
@@ -114,11 +120,19 @@ ul {
     padding-right: 250px;
     
 }
-
-.photoGridAndAgent{
+.photoGridAndAgent > .card{
+    height: 250px;
+}
+.photoGridAndAgent {
     display: flex;
-    justify-content: space-between;
-    margin-left: 23px;
+    margin-left: 15px;
+    margin-top: 100px;
+    
+}
+.photoGridAndAgent2{
+    display: flex;
+    /* margin-right: 800px; */
+    /* margin-left: 23px; */
 }
 
 .tenantDetails{
@@ -138,7 +152,8 @@ ul {
 
 .fullpropertyDetails{
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
+    margin-left: 15px;
 }
 
 .AgentPhoto{
@@ -165,3 +180,36 @@ ul {
     display: flex;
     justify-content: end;
 }
+
+.mainpanel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+.mainpanel > .card{
+    margin-top: 10px;
+}
+
+.tenantDetails{
+    padding: 40px;
+}
+
+.photoGrid{
+    margin-left: 15px;
+}
+
+.card{
+    cursor: pointer;
+}
+/* 
+.mainPage{
+    display: flex;
+} */
+
+.photoGrid2{
+
+}
+
