@@ -1,3 +1,6 @@
+//Here we are creating database tables and defining the structure
+
+
 const sqlite3 = require ('sqlite3').verbose()
 const dbName = 'myDatabase.db'
 

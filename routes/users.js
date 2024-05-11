@@ -1,25 +1,23 @@
+//Here I'm seeting up the routes
 
+//require any neccesary  modules
 var nodemailer = require('nodemailer');
 const express = require('express');
 const router = express.Router();
-const passport = require('passport');
 const sqlite3 = require ('sqlite3').verbose();
 const emailjs = require('@emailjs/nodejs');
-// import emailjs from '@emailjs/nodejs';
-//const emailjs = require('@emailjs/browser');
+
+// connect to my sql database
 
 db = new sqlite3.Database('./myDatabase.db',sqlite3.OPEN_READWRITE,(err)=>{
     if(err) return console.error(err)
 })
 
-
-// ,const {createAgent,createTenant,readAgents,updateAgent,deleteAgent} = require('../crud')
-// const {createTenant,readAgents} = require('../crud')
+// route for displaying home page
 
 router.get('/',async (req, res,callback) => {
     
     const sql = `SELECT * FROM PropertyDetails`;
-    //db.all(sql,[],callback)
     await db.all(`SELECT * FROM PropertyDetails`, function(err, rows) {
         if(err){
             console.log(err.message)
@@ -28,18 +26,15 @@ router.get('/',async (req, res,callback) => {
             res.render('index',{rows});
         }
      });
-
-    
     
 })
+
+// route for showing all the available properties
 
 router.get('/propertyDetails/:id',async (req, res) => {
 
     var number = String(req.params.id)
     
-    
-    // const sql = `SELECT * FROM PropertyDetails`;
-    // //db.all(sql,[],callback)
     await db.all(`SELECT * FROM PropertyDetails WHERE Number = ${number}`, function(err, rows) {
         if(err){
             console.log(err.message)
@@ -50,16 +45,15 @@ router.get('/propertyDetails/:id',async (req, res) => {
         }
      });
 
-    //  const sql = `DELETE FROM Agents WHERE id = ?`
-    //  db.run(sql, id,callback)
-
 })
+
+//route for Agent/Admin to log into the system
 
 router.get('/LogIn', (req, res) => {
-    
-    
     res.render('LogIn');
 })
+
+// authenticating the user, only Agent and Admins have access to this infromation
 
 router.post('/tenantsDetails', async(req, res) => {
    
@@ -74,14 +68,12 @@ router.post('/tenantsDetails', async(req, res) => {
         }
     }
 
-    const data  = await db.all(`SELECT * FROM Tenants`, function(err, rows) {
+    await db.all(`SELECT * FROM Tenants`, function(err, rows) {
         if(err){
             
             console.log(err.message)
         }
         else{
-            //tempprows = rows
-            //console.log(rows)
             res.render(redirectUrl,{rows});
         }
         
@@ -91,13 +83,14 @@ router.post('/tenantsDetails', async(req, res) => {
 
 })
 
+// Shows all the important information about tenants
 router.get('/tenantsDetails', (req, res) => {
-
-    
 
     res.render('tenantsDetails');
     
 })
+
+//Show full details about tenant's interest
 
 router.get('/tenantInterest/:id',async (req, res) => {
     var number = String(req.params.id)
@@ -116,22 +109,26 @@ router.get('/tenantInterest/:id',async (req, res) => {
 })
 
 
+//Show All agencies working across Bitprop properties
 
+router.get('/ShowAgencies', async(req, res) => {
 
-router.get('/ShowAgencies', (req, res) => {
-
-    readAgents((err,rows) => {
-
+    await db.all(`SELECT * FROM Agents`, function(err, rows) {
         if(err){
-            res.status(500).send(err.message)
+            
+            console.log(err.message)
         }
         else{
-            res.status(200).json(rows)
+            res.render('ShowAgencies',{rows});
         }
-    })
+        
 
-    //res.render('Agency');
+     });
+
+    
 })
+
+// Send the Tenants details to the database
 
 router.post('/Register', (req, res,callback) => {
 
@@ -148,6 +145,9 @@ router.post('/Register', (req, res,callback) => {
     }else{
         toEMail ='Fezco0963@gmail.com'
     }
+
+    //send email to the agent you like the property
+
     const transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
@@ -157,12 +157,13 @@ router.post('/Register', (req, res,callback) => {
             pass: 'goqy azrf iuer aiiu'
         },
     });
-    //if property number is even/odd)
+
+    
     transporter.sendMail({
         
         to: toEMail,
         subject: 'Interested on this property',
-        html: ` <h3>Hi my this ${Name} </h3>
+        html: ` <h3>Hi my this is ${Name} </h3>
                 <h3>${textMessage}</h3>
                 <br/>
                 click the link below to login in and see tenants full deatils
@@ -183,13 +184,5 @@ router.post('/Register', (req, res,callback) => {
     res.redirect(`/propertyDetails/${propertyNumber}`)
 
 })
-
-
-
-
-
-
-
-
 
 module.exports =router;

@@ -4,5 +4,16 @@ A system that allows prospective tenants to view available properties and regist
 
 # Please follow the instructions below to run the application succesfully
 
-You first 
+
+## Development
+
+
+From your terminal in the order shown:
+
+```sh
+npm install
+node database.js
+node crud.js
+node Server.js
+
 

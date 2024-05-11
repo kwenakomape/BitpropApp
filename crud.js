@@ -1,4 +1,9 @@
 
+//Here we are initially information tou database
+//This information includes propeties deatails and angencies
+//This will allow Admin and Agenccies to have certain privilege to the system
+
+
 const sqlite3 = require ('sqlite3').verbose()
 
 db = new sqlite3.Database('./myDatabase.db',sqlite3.OPEN_READWRITE,(err)=>{
@@ -191,6 +196,5 @@ createPropertyDetails("10","R7500","185 Stellenberg Road",
         console.log("Property Details Stored to database")
     }
 })
-// let name = "kwena"
-// module.exports = {createAgent,createTenant,readAgents,updateAgent,deleteAgent}
+
 
