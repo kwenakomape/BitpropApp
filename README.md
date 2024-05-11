@@ -53,11 +53,11 @@ After running those commands open localhost on port 3000 ro run the application
  * Important note, I used javasript for backend logic instead of python, I can always switch to python,but in this case
   I found as I was building it was effient,thats the only thing different from the instruction.
  * For my front end I used ccs,html and javascript, I used bootstrap for user friendly interface
- *I added and extra feature to view all the agents avaible at Bitprop and their details
- *Each properties has enough information to help make a better decision
- *Once the tenants shows some interest they can send message notification to the Agent responsible for the property,
+ * I added and extra feature to view all the agents avaible at Bitprop and their details
+ * Each properties has enough information to help make a better decision
+ * Once the tenants shows some interest they can send message notification to the Agent responsible for the property,
  they cant actually write message and it will be recieved by the agent and given attention.
- *I ensured the link to the site(which is localhost) is included so that the agent can log in from their email.
+ * I ensured the link to the site(which is localhost) is included so that the agent can log in from their email.
 
  * I used nodemailer module to setup an email external API. it uses SMTP transport machanisn
  * In the Navbar on the home pages I have Buy and Developments items , I used assumed  Bitprop deals
