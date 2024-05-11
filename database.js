@@ -17,7 +17,7 @@ db = new sqlite3.Database(dbName,(err) =>{
                 console.log("Tenants.. Table created or existed")
             }
         })
-        db.run('CREATE TABLE IF NOT EXISTS Agents (id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT, Surname TEXT, contactNumber TEXT,Email TEXT ,Photo TEXT,ListofProperties TEXT)',(err) => {
+        db.run('CREATE TABLE IF NOT EXISTS Agents (id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT, Surname TEXT, contactNumber TEXT,Email TEXT,ListofProperties TEXT)',(err) => {
             if(err){
                 console.error(err.message);
             }

@@ -4,23 +4,11 @@ const sqlite3 = require ('sqlite3').verbose()
 db = new sqlite3.Database('./myDatabase.db',sqlite3.OPEN_READWRITE,(err)=>{
     if(err) return console.error(err)
 })
-// const {db} = require('./database')
 
+const createAgent = (Name,Surname,contactNumber,Email,ListofProperties,callback) =>{
 
-
-//CREATE
-
-const createTenant = (Name,Email,contactNumber,textMessage,callback) =>{
-
-    const sql = `INSERT INTO Tenants (Name,Email,contactNumber,textMessage) VALUES (?,?,?,?)`
-    db.run(sql,[Name,Email,contactNumber,textMessage],function(err){
-        callback(err,{id: this.lastID})
-    })
-}
-const createAgent = (Name,Surname,contactNumber,Email,Photo,ListofProperties,callback) =>{
-
-    const sql = `INSERT INTO Agents (Name,Surname,contactNumber,Email,Photo,ListofProperties) VALUES (?,?,?,?,?,?)`
-    db.run(sql,[Name,Surname,contactNumber,Email,Photo,ListofProperties],function(err){
+    const sql = `INSERT INTO Agents (Name,Surname,contactNumber,Email,ListofProperties) VALUES (?,?,?,?,?)`
+    db.run(sql,[Name,Surname,contactNumber,Email,ListofProperties],function(err){
         callback(err,{id: this.lastID})
     })
 }
@@ -32,7 +20,7 @@ const createPropertyDetails = (Number,Price,Address,Features,Description,Propert
     })
 }
 
-createAgent("Keith","Samuel","0794424126" ,"keithsamuel70test1@gmail.com",(err,data) => {
+createAgent("Keith","Samuel","0794424126" ,"keithsamuel70test1@gmail.com","2,8,4,10,6",(err,data) => {
 
     if(err){
         console.error(err.message);
@@ -42,7 +30,7 @@ createAgent("Keith","Samuel","0794424126" ,"keithsamuel70test1@gmail.com",(err,d
     }
 })
 
-createAgent("John","Gain","0894724120" ,"johngain70test1@gmail.com",(err,data) => {
+createAgent("Fenzile","Daidoo","0894724120" ,"Fezco0963@gmail.com","1,9,7,5,3",(err,data) => {
 
     if(err){
         console.error(err.message);
@@ -206,4 +194,3 @@ createPropertyDetails("10","R7500","185 Stellenberg Road",
 // let name = "kwena"
 // module.exports = {createAgent,createTenant,readAgents,updateAgent,deleteAgent}
 
-module.exports = {createAgent}

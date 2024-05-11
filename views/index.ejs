@@ -19,14 +19,15 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Rent</a>
+                    <a class="nav-link" href="/">Rent</a>
                 </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Buy</a>
+                <a class="nav-link" href="#" data-bs-placement="bottom" title="There are no properties selling">Buy  </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Dvelopments</a>
+              <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom">
+                <a class="nav-link" href="#" data-bs-placement="bottom" title="There no developments yet">Developments</a>
               </li>
+        
               
               
               
@@ -35,14 +36,15 @@
           </div>
           <div class="LogInSection">
             
-              <a class="nav-link" href="/LogIn">Log In</a>
-            
-          </div>
+            <!-- <a class="btn btn-primary" href="/LogIn">Log In</a> -->
+            <a class="btn btn-primary" href="/LogIn" role="button">Log In</a>
+          
+        </div>
         </div>
       </nav>
       <main>
   
-      <h1 class="titleH">Check the avaible properties via bitprop</h1>
+      <h1 class="titleH">All the avaible properties via bitprop</h1>
         <div class="mainpanel">
           <% for(i=0;i<10;i++) {%>
             <% let list =  (rows[i].Features).split(",") %>

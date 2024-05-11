@@ -33,7 +33,10 @@ app.use(flash());
 
 app.use(passport.initialize());
 
-
+app.use((req, res, next) => {
+    
+    next();
+})
 app.use('/',UserRoutes)
 const port = process.env.PORT || 3000;
 

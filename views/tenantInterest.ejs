@@ -17,6 +17,7 @@
         
         <div class="mainPage" >
             <h1>Tenant's Interested</h1>
+            <input class="btn btn-primary btn-lg " type="button" value="Go back!" onclick="history.back()">
             <div class="photoGrid">
                 <div class="photoGridAndAgent2">
                     <div class="card" style="width: 48rem;">
@@ -124,18 +125,18 @@
                     <div class="card" style="width: 15rem;">
                         <h5>Agent</h5>
                         <div>
-                            <% if(rows[0].Number==="1" || rows[0].Number==="7" || rows[0].Number==="9" || rows[0].Number==="2" || rows[0].Number==="4") { %>
-                                <img class="AgentPhoto" src="/photos/IDphoto.jpg" alt="">
-                            <% }else {%>
+                            <% if(rows[0].Number==="1" || rows[0].Number==="7" || rows[0].Number==="9" || rows[0].Number==="3" || rows[0].Number==="5") { %>
                                 <img class="AgentPhoto" src="/photos/IDphoto2.jpg" alt="">
+                            <% }else {%>
+                                <img class="AgentPhoto" src="/photos/IDphoto.jpg" alt="">
                                <% } %>
                         </div>
-                        <% if(rows[0].Number==="5" || rows[0].Number==="6" || rows[0].Number==="8" || rows[0].Number==="10" || rows[0].Number==="3") {%>
-                            <div>James Gain</div>
+                        <% if(rows[0].Number==="2" || rows[0].Number==="4" || rows[0].Number==="6" || rows[0].Number==="8" || rows[0].Number==="10") {%>
+                            <div>Keith Samuel</div>
                             <br>
                             <span>Contact: 0609445512</span>
                         <% }else {%>
-                            <div>Keith Samuel</div>
+                            <div>Fenzile Daidoo</div>
                             <br>
                             <span>Contact: 0701233456</span>
                             <% } %>
