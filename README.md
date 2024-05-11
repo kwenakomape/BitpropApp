@@ -66,8 +66,7 @@ After running those commands open localhost on port 3000 ro run the application
   *As I said ,I was making up the data ,we just need to replace the data with the actual data from the
   the Bitprop database.
 * The tenants information is submiited to the sqllite database through node express server
-* Initially I seed the Agent/Admin  and property data, I was make sure Agent/Admin have access to the privilege system
-*  that a tenant wont have
+* Initially I seed the Agent/Admin  and property data, I was make sure Agent/Admin have access to the privilege system that a tenant wont have
 
 * The admin site will show table of all the tenants and their interest so the agency can be able to commuicate with them
 *The Admin can also see othe Agency assigned properties in the show interest in them
