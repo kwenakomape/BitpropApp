@@ -16,7 +16,8 @@ node database.js
 node crud.js
 node Server.js
 
-After running those commands open localhost on port 3000 to run the application
+```
+* After running those commands open localhost on port 3000 to run the application
 
 
 * As I read from the document you have two agents ,I also created two gmail acounts that agent they are going use
@@ -70,4 +71,4 @@ After running those commands open localhost on port 3000 to run the application
  * The admin site will show table of all the tenants and their interest so the agency can be able to commuicate with them further
  * The Admin can also see other Agency assigned properties and see who have showed interest in them
 
-```
+
