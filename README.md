@@ -18,10 +18,10 @@ node Server.js
 
 After running those commands open localhost on port 3000 to run the application
 
-```
+
 * As I read from the document you have two agents ,I also created two gmail acounts that agent they are going use
 
-# Adim/agent detais to log in the Gmail account to check if the recieved messages
+# Adim/agent details to log in the Gmail account to check if the recieved messages
 
  Agent 1 Details:
    email: Fezco0963@gmail.com 
@@ -31,7 +31,7 @@ After running those commands open localhost on port 3000 to run the application
    email: keithsamuel70test1@gmail.com
    password : Kwena@2024
    
-# Adim/agent detais to log in the system and see tenants full details
+# Adim/agent details to log in the system and see tenants full details
 
  Agent 1 Details:
    email: Fezco0963@gmail.com  
@@ -42,7 +42,7 @@ After running those commands open localhost on port 3000 to run the application
    password : 54656 
 
 
-# Pleas make you enter the details correctly in order access the system
+# Please make you enter the details correctly in order access the system
 
 
 # Pointers
@@ -70,4 +70,4 @@ After running those commands open localhost on port 3000 to run the application
  * The admin site will show table of all the tenants and their interest so the agency can be able to commuicate with them further
  * The Admin can also see other Agency assigned properties and see who have showed interest in them
 
-
+```
