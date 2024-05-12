@@ -43,7 +43,7 @@ node Server.js
    password : 54656 
 
 
-# Please make you enter the details correctly in order access the system
+# Please make you enter the details correctly in order to access the system
 
 
 # Pointers
